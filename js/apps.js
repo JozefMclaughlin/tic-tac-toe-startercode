@@ -3,11 +3,14 @@ console.log("loaded");
 document.addEventListener( "DOMContentLoaded", function(){
 
 
+ // finding variables
   var square = document.body.children[2];
   var currentTurn = document.body.children[1]
   var turn_count = 1
   var boxes = document.getElementsByTagName("td")
+  var resetbtn = document.getElementById("reset")
 
+  // On click targets box
   for (var i = 0; i < boxes.length; i++) {
     box = boxes[i]
     box.addEventListener("click", function(event){
@@ -27,6 +30,7 @@ document.addEventListener( "DOMContentLoaded", function(){
       }
     })
   }
+  // updates turn number and changes text
   function updateturn(turn){
     turn_count = turn_count + 1
     if (turn_count % 2 != 0) {
@@ -35,8 +39,29 @@ document.addEventListener( "DOMContentLoaded", function(){
       turn.innerHTML = "It is O's turn"
     }
   }
+
+  //WIP check for finner and informif there is one
   function wincheck(){
-    
+    switch (expression) {
+      case expression:
+
+        break;
+      default:
+
+    }
+  }
+
+  resetbtn.addEventListener("click", function(event){
+    Reset()
+  });
+  function Reset(){
+    turn_count = 0;
+    updateturn(currentTurn);
+    for (var i = 0; i < boxes.length; i++) {
+      box=boxes[i]
+      box.innerHTML = ""
+      box.classList.remove("X", "O");
+    }
   }
 
 });
